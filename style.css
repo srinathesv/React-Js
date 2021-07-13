@@ -1,0 +1,135 @@
+
+.social-links {
+    margin-top: 50px;
+    display: flex;
+    margin-left: 10%;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    line-height: 2;
+    margin-right: 30px;
+    height: 0px;
+
+}
+
+.social-links a:hover {
+    background:green
+}
+
+@media (max-width: 992px) {
+    h1 {
+     font-size: 36px;
+   }
+    h2 {
+     font-size: 20px;
+     line-height: 30px;
+   }
+    .social-links {
+     margin-top: 0px;
+   }
+    .container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+   }
+ }
+ body{
+     margin: 0;
+     padding: 0;
+     background-color:rgb(3, 22, 41);
+     background-size: cover;
+ }
+ header{
+     display:none;
+ }
+
+ a{
+    color: white;
+    text-decoration: none;
+    
+}
+.container a:hover{
+    text-decoration: none;
+    color: hotpink;
+}
+
+
+h1,h2{
+    
+    font-size: 200;
+    color: white;
+    font-family: Raleway, sans-serif;
+   
+}
+.container {
+  width: 550px;
+  background: none;
+  padding: 40px;
+  text-align: center;
+  
+  margin-top: 10%;
+  color: white;
+  font-family: 'Century Gothic',sans-serif;
+    text-align: justify;
+    
+    margin: 170px;
+    
+
+}
+.navigator {
+  margin-top: 60px;
+}
+
+.navigator ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  
+}
+
+.navigator li + li {
+  margin-left: 40px;
+}
+
+.navigator a {
+  display: block;
+  position: relative;
+  color: #fff;
+  font-size: 19px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.navigator a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color:white;
+  visibility: hidden;
+  width: 0px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.navigator a:hover:before, .navigator li:hover > a:before, .navigator .active > a:before {
+  visibility: visible;
+  width: 25px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.navigator a:hover, .navigator .active > a, .navigator li:hover > a {
+  color: hotpink;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out 0s;
+}
+.navigator ul {
+    list-style-type: none;
+    
+  }

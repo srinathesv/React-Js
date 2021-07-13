@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Web Page!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h3{
+                color: white;
+                float: right;
+            }
+            .ab {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                font-size: 18px;
+                color: white;
+                font-family: 'Century Gothic',sans-serif; 
+                column-count: 2;
+                column-gap: 3%;
+            }
+
+            h2{
+                font-family: 'Century Gothic',sans-serif;
+                margin-left: 10%;
+                font-stretch: expanded;
+            }
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .container > div {
+                background-image:linear-gradient(rgb(138,96,96),Darkslategrey);
+                /* background-color:rgb(54, 3, 29); */
+                font-size: 20px;
+                margin: 20px;
+                padding: 20px;
+                width: 200px;
+            }
+
+            body {margin: 0; background-image: linear-gradient(rgb(51, 0, 40),black);}
+            img{
+                border-radius: 80%;
+                border-width: 10%;
+                margin-left: 10%;
+                border-color:white;
+            }
+            p{
+                color: white;
+                text-align: right;
+            }
+            ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(138,96,96);
+            }
+
+            ul.topnav li {float: left; font-family: 'Century Gothic',sans-serif;}
+
+            ul.topnav li a {
+            display: block;
+            color: Aqua;
+            text-align: center;
+            padding: 30px 50px;
+            text-decoration: none;
+            font-size: 20px;
+            }
+
+            ul.topnav li a:hover:not(.active) {background-color: Steelblue; transition: all 0.2s ease-in-out 0s; color: Slateblue;}
+
+            ul.topnav li a.active {background-color:Lavender; transition: all 0.2s ease-in-out 0s; color: Black;}
+
+            ul.topnav li.right {float: right;}
+
+            @media screen and (max-width: 600px) {
+            ul.topnav li.right, 
+            ul.topnav li {float: none; }
+            .ab {
+                float: right;
+            }
+            }
+            hr{
+               border: 1px dashed white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <ul class="topnav">
+            
+            <li><a  href="index.html">Home</a></li>
+            <li><a class="active" href="about.html">About</a></li>
+            <li><a  href="education.html">Qualification</a></li>
+            <li><a  href="skills.html">Skills</a></li>
+            <li><a href="https://drive.google.com/file/d/1AzZn5eJykZ2cIBUybkq81IjLIJGXouG-/view?usp=sharing"> <span>Resume</span></a></li>
+            <li ><a  href="contact.html">Contact</a></li>
+            <li><h1 class="right" style="margin-left:100px;color: Whitesmoke;font-family: 'Century Gothic',sans-serif;">Srinath Esv</h1></li>
+        </ul>
+
+        <h2 style="color: WhiteSmoke;">
+            ABOUT <hr>
+        </h2>
+        <div class="ab"><img src="me.jpg" width="200px" height="200px" >
+            <div style="text-align:justify; margin-right: 8%; float: right; " > 
+            A passionate computer enthusiast who likes to try different fields. Currently pursuing Master's in Information Technology at IIIT Hyderabad. Good competency and command over programming languages such as Python, Java, SQL and thirst of learning new things. <br><br>
+            Moreover, a strong believer in a famous quote, <strong>"Everything in life teaches you a lesson, you just have to be willing to learn".</strong> Because a person who learns never fails. Looking for new opportunities in professional and as well as personal life.<br>
+            <ol style="column-count: 2;">
+                <li><strong>D.O.B:</strong> 10-12-1998</li>
+                <br>
+                <li><b>Place:</b> Rajahmundry, Andhra Pradesh</li>
+                <li><strong>Phone:</strong> 8008305181</li>
+                <br>
+                <li><strong>Email:</strong> srinath.esv@gmail.com</li>
+            </ol>
+            </div>
+        </div>
+        <h2 style="color: WhiteSmoke;">
+            INTERESTS <hr>
+        </h2>
+        <div class="container" style="margin-left: 10%; color: Ghostwhite; text-align: center; font-family: 'Century Gothic',sans-serif;">
+            <div><span style='font: size 30px'>&#128073;</span><strong> Photography</strong></div>
+            <div><span style='font: size 30px'>&#128073;</span><strong> Cricket</strong></div>
+            <div><span style='font: size 30px'>&#128073;</span><strong> PC Game</strong> </div>
+            <div><span style='font: size 30px'>&#128073;</span><strong> Surfing web - Tech gadgets</strong></div>
+            <div><span style='font: size 30px'>&#128073;</span><strong> Travel</strong></div>
+            
+        </div>
+    </body>
+</html>
