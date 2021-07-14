@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Web Page!</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {margin: 0; background-image: Ghostwhite; padding-left: 10px }
+        p{
+                color: Black;
+                text-align: center;
+            }
+        ul.topnav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(138,96,96);
+        }
+
+        ul.topnav li {float: left; font-family: 'Century Gothic',sans-serif;}
+
+        ul.topnav li a {
+        display: block;
+        color: Aqua;
+        text-align: center;
+        padding: 30px 50px;
+        text-decoration: none;
+        font-size: 20px;
+        }
+
+        ul.topnav li a:hover:not(.active) {background-color: Ghostwhite; transition: all 0.2s ease-in-out 0s; color: Darkslategrey;}
+
+        ul.topnav li a.active {background-color:Lavender; transition: all 0.2s ease-in-out 0s; color: Black;}
+
+        ul.topnav li.right {float: right;}
+
+        @media screen and (max-width: 600px) {
+        ul.topnav li.right, 
+        ul.topnav li {float: none; }
+        .ab {
+            float: right;
+        }
+        }
+        hr{
+            border: 1px solid Black;
+        }
+
+        .container {
+            width: 50%; /* Full width */
+            background-color: #ddd; /* Grey background */
+            
+            }
+
+        .skills {
+        text-align: center; /* Right-align text */
+        padding-top: 3px; /* Add top padding */
+        padding-bottom: 1px; /* Add bottom padding */
+        color: Black; 
+
+        }
+
+        .html {width: 85%; background-color: Orange;} /* Green */
+        .css {width: 80%; background-color: Orange;} /* Aqua */
+        .python {width: 80%; background-color: Orange;} /* Red */
+        .java {width: 70%; background-color: Orange;} /* Dark Grey */
+        .ux {width: 90%; background-color: Orange;} /* Dark Grey */
+                
+    </style>
+
+</head>
+
+    <body>
+            <ul class="topnav">
+                
+                <li><a  href="index.html">Home</a></li>
+                <li><a  href="about.html">About</a></li>
+                <li><a  class="active" href="qualification.html">Qualification</a></li>
+                <li><a  href="projects.html">Projects</a></li>
+                <li><a href="https://drive.google.com/file/d/1AzZn5eJykZ2cIBUybkq81IjLIJGXouG-/view?usp=sharing"> <span>Resume</span></a></li>
+                <li ><a  href="contact.html">Contact</a></li>
+                <li><h1 class="right" style="margin-left:100px;color: Whitesmoke;font-family: 'Century Gothic',sans-serif;">Srinath Esv</h1></li>
+            </ul>
+
+        <h2 style="font-size:larger;color:black" ><i><b>EDUCATION:</b></i></h2>
+        <table border="" width="50%" >
+            <tr>
+                <th style="color:teal; align-self:center;font-size: larger;"><i>Qualification</i></th>
+                <th style="color: teal;align-self: center;font-size: larger;"><i>Year</i></th>
+                <th style="color: teal; align-self: center;font-size: larger;"><i>Percent</i></th>
+            </tr>
+            <tr>
+                <td align="center" style="color:#1c273b;font-size: larger;"><i>MSIT, IIIT-H</i> </td>
+                <td align="center" style="color:#1c273b;font-size: larger;"><i>2020-2022</i> </td>
+                <td align="center" style="color:#1c273b;font-size: larger;"><i>9.0</i> </td>
+
+            </tr>
+            <tr>
+                <td align="center" style="color:#1c273b;font-size: larger;"><i>SCSVMV University</i> </td>
+                <td align="center" style="color:#1c273b;font-size: larger;"><i>2016-2020</i> </td>
+                <td align="center" style="color:#1c273b;font-size: larger;"><i>7.3</i> </td>
+
+            </tr>
+            <tr>
+                <td align="center" style="color:#1c273b;font-size: larger;"><i>Narayana Junior College</i> </td>
+                <td align="center" style="color:#1c273b;font-size: larger;"><i>2014-2016</i> </td>
+                <td align="center" style="color:#1c273b;font-size: larger;"><i>83.2</i> </td>
+
+            </tr>
+            <tr>
+                <td align="center" style="color:#1c273b;font-size: larger;"><i>SSC</i> </td>
+                <td align="center" style="color:#1c273b;font-size: larger;"><i>2014</i> </td>
+                <td align="center" style="color:#1c273b;font-size: larger;"><i>8.8</i> </td>
+
+            </tr>
+        </table>
+        <h2 style="font-size:larger;color:black" ><i><b>SKILLS:</b></i></h2>
+                <p style="text-align:left;"> HTML </p>
+                    <div class="container">
+                        <div class="skills html">85%</div>
+                    </div>
+
+                <p style="text-align:left;">CSS</p>
+                <div class="container">
+                    <div class="skills css">80%</div>
+                </div>
+
+                <p style="text-align:left;">Python</p>
+                <div class="container">
+                    <div class="skills python">80%</div>
+                </div>
+
+                <p style="text-align:left;">Java</p>
+                <div class="container">
+                    <div class="skills java">70%</div>
+                </div>
+                <p style="text-align:left;">UI/UX</p>
+                <div class="container">
+                    <div class="skills ux">90%</div>
+                </div>
+
+        </table>   
+
+    
+
+
+    </body>
+</html>
