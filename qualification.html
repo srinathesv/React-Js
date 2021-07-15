@@ -4,11 +4,32 @@
 <title>My Web Page!</title>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {margin: 0; background-image: Ghostwhite; padding-left: 10px }
+        body {margin: 0; background-image: Ghostwhite; }
         p{
                 color: Black;
                 text-align: center;
+                margin-left: 10%;
+                font-stretch: expanded;
             }
+        
+        h2{
+            font-family: 'Century Gothic',sans-serif;
+            margin-left: 10%;
+            font-stretch: expanded;
+        }
+        .ab {
+                align-items: center;
+                display: flex;
+                /* justify-content: center; */
+                font-size: 18px;
+                color: Black;
+                font-family: 'Century Gothic',sans-serif; 
+                /* column-count: 2;
+                column-gap: 3%; */
+                /* border: 20px solid #555; */
+            }
+
+        
         ul.topnav {
         list-style-type: none;
         margin: 0;
@@ -45,10 +66,19 @@
             border: 1px solid Black;
         }
 
+        table{
+            margin-left: 10%;
+            font-stretch: expanded;
+        }
+
         .container {
             width: 50%; /* Full width */
             background-color: #ddd; /* Grey background */
-            
+            align-items: center;
+            display: flex;
+            margin-left: 10%;
+            font-stretch: expanded;
+
             }
 
         .skills {
@@ -64,7 +94,7 @@
         .python {width: 80%; background-color: Orange;} /* Red */
         .java {width: 70%; background-color: Orange;} /* Dark Grey */
         .ux {width: 90%; background-color: Orange;} /* Dark Grey */
-                
+        
     </style>
 
 </head>
@@ -81,7 +111,7 @@
                 <li><h1 class="right" style="margin-left:100px;color: Whitesmoke;font-family: 'Century Gothic',sans-serif;">Srinath Esv</h1></li>
             </ul>
 
-        <h2 style="font-size:larger;color:black" ><i><b>EDUCATION:</b></i></h2>
+        <h2 style="font-size:larger;color:black" ><i><b>EDUCATION:<hr></b></i></h2>
         <table border="" width="50%" >
             <tr>
                 <th style="color:teal; align-self:center;font-size: larger;"><i>Qualification</i></th>
@@ -109,11 +139,11 @@
             <tr>
                 <td align="center" style="color:#1c273b;font-size: larger;"><i>SSC</i> </td>
                 <td align="center" style="color:#1c273b;font-size: larger;"><i>2014</i> </td>
-                <td align="center" style="color:#1c273b;font-size: larger;"><i>8.8</i> </td>
+                <td align="center" style="color:#1c273b;font-size: larger;"><i>8.8</i> </td><br>
 
             </tr>
-        </table>
-        <h2 style="font-size:larger;color:black" ><i><b>SKILLS:</b></i></h2>
+        </table><br>
+        <h2 style="font-size:larger;color:black" ><i><b>SKILLS:<hr></b></i></h2>
                 <p style="text-align:left;"> HTML </p>
                     <div class="container">
                         <div class="skills html">85%</div>
@@ -137,7 +167,6 @@
                 <div class="container">
                     <div class="skills ux">90%</div>
                 </div>
-
         </table>   
 
     

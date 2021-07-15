@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Web Page!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {margin: 0; background-image: Ghostwhite; }
+            ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(138,96,96);
+            }
+
+            ul.topnav li {float: left; font-family: 'Century Gothic',sans-serif;}
+
+            ul.topnav li a {
+            display: block;
+            color: Aqua;
+            text-align: center;
+            padding: 30px 50px;
+            text-decoration: none;
+            font-size: 20px;
+            }
+
+            ul.topnav li a:hover:not(.active) {background-color: Ghostwhite; transition: all 0.2s ease-in-out 0s; color: Darkslategrey;}
+
+            ul.topnav li a.active {background-color:Lavender; transition: all 0.2s ease-in-out 0s; color: Black;}
+
+            ul.topnav li.right {float: right;}
+
+            @media screen and (max-width: 600px) {
+            ul.topnav li.right, 
+            ul.topnav li {float: none; }
+            .ab {
+                float: right;
+            }
+            }
+            hr{
+                border: 1px solid Black;
+            }
+
+            .social-links {
+                margin-top: 50px;
+                display: flex;
+                margin-left: 10%;
+            }
+
+            .social-links a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: black;
+                line-height: 2;
+                margin-right: 30px;
+                height: 0px;
+
+            }
+
+            .social-links a:hover {
+                background:green
+            }
+            img {
+                vertical-align: middle;
+            }
+            a {
+                text-decoration: none;
+            }
+        </style>
+
+    </head>
+
+    <body>
+    <ul class="topnav">
+            
+            <li><a  href="index.html">Home</a></li>
+            <li><a  href="about.html">About</a></li>
+            <li><a  href="qualification.html">Qualification</a></li>
+            <li><a  href="projects.html">Projects</a></li>
+            <li><a href="https://drive.google.com/file/d/1AzZn5eJykZ2cIBUybkq81IjLIJGXouG-/view?usp=sharing"> <span>Resume</span></a></li>
+            <li ><a class="active" href="contact.html">Contact</a></li>
+            <li><h1 class="right" style="margin-left:100px;color: Whitesmoke;font-family: 'Century Gothic',sans-serif;">Srinath Esv</h1></li>
+        </ul>
+        
+        <table align="left" style="margin-left: 10%; padding-top:70px">
+        <tr>
+            <td><p><a href="https://github.com/srinathesv" alt="click here for github" >
+                <img border="" alt="click" src="github3.png" title="click here" width="80" height="80" > <span> My Git Repo </span> </p></td></tr> 
+
+            <tr><td><P><a href="https://www.linkedin.com/in/srinathesv/" alt="click here for LinkedIn" >
+                    <img border="" alt="click" src="linkedin5.png" title="click here" width="70" height="70" > <span>Contact through LinkedIn </span></P></td></tr>
+            <tr><td><P><a href="mailto:srinath.esv@msitprogram.net" alt="click here for gmail" >
+                    <img border="" alt="click" src="mail4.png" title="click here" width="70" height="70" > <span>Contact via Email </span></P></td>
+                </tr>
+        </table>
+        
+        <iframe align="right" style="padding-top: 40px; padding-right: 80px" src="https://docs.google.com/forms/d/e/1FAIpQLSedeCTZs1uSsPfejSTD4uYm_HjRBwS_iEf39vnPubVoBK6XXg/viewform?embedded=true" width="640" height="673" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>    
+    </body>
+</html>
