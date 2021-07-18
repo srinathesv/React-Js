@@ -3,6 +3,7 @@
     <head>
         <title>My Web Page!</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
         <style>
             body {margin: 0; background-image: Ghostwhite; }
@@ -14,7 +15,7 @@
             background-color: rgb(138,96,96);
             }
 
-            ul.topnav li {float: left; font-family: 'Century Gothic',sans-serif;}
+            /* ul.topnav li {float: left; font-family: 'Century Gothic',sans-serif;}
 
             ul.topnav li a {
             display: block;
@@ -37,7 +38,7 @@
             .ab {
                 float: right;
             }
-            }
+            } */
             hr{
                 border: 1px solid Black;
             }
@@ -68,34 +69,66 @@
             a {
                 text-decoration: none;
             }
+
+            .table{
+                margin-top:10px;
+
+            }
         </style>
 
     </head>
 
     <body>
-    <ul class="topnav">
-            
-            <li><a  href="index.html">Home</a></li>
-            <li><a  href="about.html">About</a></li>
-            <li><a  href="qualification.html">Qualification</a></li>
-            <li><a  href="projects.html">Projects</a></li>
-            <li><a href="https://drive.google.com/file/d/1AzZn5eJykZ2cIBUybkq81IjLIJGXouG-/view?usp=sharing"> <span>Resume</span></a></li>
-            <li ><a class="active" href="contact.html">Contact</a></li>
-            <li><h1 class="right" style="margin-left:100px;color: Whitesmoke;font-family: 'Century Gothic',sans-serif;">Srinath Esv</h1></li>
-        </ul>
-        
-        <table align="left" style="margin-left: 10%; padding-top:70px">
-        <tr>
-            <td><p><a href="https://github.com/srinathesv" alt="click here for github" >
-                <img border="" alt="click" src="github3.png" title="click here" width="80" height="80" > <span> My Git Repo </span> </p></td></tr> 
+    
+    <!-- Nav bar begin -->
 
-            <tr><td><P><a href="https://www.linkedin.com/in/srinathesv/" alt="click here for LinkedIn" >
-                    <img border="" alt="click" src="linkedin5.png" title="click here" width="70" height="70" > <span>Contact through LinkedIn </span></P></td></tr>
-            <tr><td><P><a href="mailto:srinath.esv@msitprogram.net" alt="click here for gmail" >
-                    <img border="" alt="click" src="mail4.png" title="click here" width="70" height="70" > <span>Contact via Email </span></P></td>
-                </tr>
-        </table>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00303F;">  
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" style="color:#CAE4DB"> Srinath Esv</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button> 
+            <div class="collapse navbar-collapse">
+            <div class="navbar-nav">
+                <a class="nav-link"  href="about.html" style="color:white;">About</a>
+                <a class="nav-link" href="qualification.html" style="color:white;">Qualification</a>
+                <a class="nav-link"  href="projects.html" style="color:white;">Projects</a>
+                <a class="nav-link active" aria-current="page" href="contact.html" style="color: #D6EFC7;">Contact</a>
+                
+            </div>
+            </div>
+        </div>
+        </nav>
+        <!-- nav bar end -->
+        <!-- social links  using table-->
+
+        <table class="table table-borderless">
         
-        <iframe align="right" style="padding-top: 40px; padding-right: 80px" src="https://docs.google.com/forms/d/e/1FAIpQLSedeCTZs1uSsPfejSTD4uYm_HjRBwS_iEf39vnPubVoBK6XXg/viewform?embedded=true" width="640" height="673" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>    
+        <tbody>
+            <tr>
+            
+            <td></td>
+            <td><p><a href="https://github.com/srinathesv" alt="click here for github" >
+                <img border="" alt="click" src="github3.png" title="click here" width="30" height="30" > <span> My Git Repo </span> </p></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td colspan="2"><P><a href="https://www.linkedin.com/in/srinathesv/" alt="click here for LinkedIn" >
+                    <img border="" alt="click" src="linkedin5.png" title="click here" width="30" height="30" > <span>Contact through LinkedIn </span></P></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td colspan="2"><P><a href="mailto:srinath.esv@msitprogram.net" alt="click here for gmail" >
+                    <img border="" alt="click" src="mail4.png" title="click here" width="30" height="30" > <span>Contact via Email </span></P></td>
+            <td></td>
+            </tr>
+        </tbody>
+        </table>
+        <!-- social links end -->
+
+        <!-- google form for feedback -->
+        <iframe align="right" style="padding-top: 40px; padding-right: 80px;" src="https://docs.google.com/forms/d/e/1FAIpQLSedeCTZs1uSsPfejSTD4uYm_HjRBwS_iEf39vnPubVoBK6XXg/viewform?embedded=true" width="640" height="673" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>    
     </body>
 </html>
