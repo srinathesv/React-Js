@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Drumkit App </title>
+        <br>
+        <h1 style="font-family:   sans-serif;text-align: center; color: white; 
+        font-stretch: extra-expanded; font-size: 36.5px;">Welcome to the Drum Kit Application</h1>
+
+    </head>
+
+<!-- Script for adding functions to play sounds on click. -->
+    <script>
+        function playSound1(){
+            var song1 = new Audio("tom-1.mp3")
+            song1.play()
+        }
+        
+        function playSound2(){
+            var song2 = new Audio("snare.mp3")
+            song2.play()
+        }
+
+        function playSound3(){
+            var song3 = new Audio("tom-2.mp3")
+            song3.play()
+        }
+
+        function playSound4(){
+            var song4 = new Audio("tom-3.mp3")
+            song4.play()
+        }
+
+        function playSound5(){
+            var song5 = new Audio("crash.mp3")
+            song5.play()
+        }
+
+        function playSound6(){
+            var song6 = new Audio("tom-4.mp3")
+            song6.play()
+        }
+    </script>
+
+<!-- Adding style for the webpage. -->
+    <style>
+        h2{
+            text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 23px; color: white;
+        }
+    </style>
+
+<!-- Body begins  -->
+    <body style="background-image: linear-gradient(rgb(209, 34, 34),rgb(190, 40, 72));">
+
+<!--using map tag to enable the on-click functions to the co-ordinate values.  -->
+        <map name="workmap">
+            <img src="drumkit.png" width="750px" height="535px" usemap="#workmap" style="border-color: rgb(190, 40, 72);border-style: double; border-width: 12%; margin-left: 25.5%;  border-radius: 2%;">
+
+            <area  shape="circle" coords="155,400,100"  onclick="playSound1()">
+        
+            <area shape="circle" coords="350,400,180"  onclick="playSound2()">
+            
+            <area shape="circle" coords="450,180,50"  onclick="playSound3()">
+            
+            <area shape="circle" coords="280,180,60"  onclick="playSound4()">
+            <area shape="circle" coords="600,160,50"  onclick="playSound5()">
+            <area shape="circle" coords="550,300,50"  onclick="playSound6()">
+        </map>
+
+        <h2> Make some noice by clicking on the drums </h2><br>
+    
+    </body>
+<!-- body closes -->
+        
+</html>
