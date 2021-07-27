@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        
+        <style>
+            .main {
+                margin-left: 40%;
+                margin-top: 16%;
+                margin-right: 40%;
+                display:flexbox;
+                padding: 10px;
+                border: solid 2px;
+                border-color: white;
+                background-color: rgb(62, 178, 250);
+                color: black;
+                text-align: center;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                box-shadow: 0px 0px 3px 3px rgb(62, 178, 250);
+            }
+            input{
+                border: solid 1px;
+                border-color: black;
+                padding: 10px;
+            }
+            h3,h1{
+                color: white;
+            }
+            a:hover{
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+        
+        <div id="app1"></div>
+    </body>
+        
+    <script type="text/babel">
+        
+        
+        class Userdetails extends React.Component {
+
+            constructor(props)
+            {
+                super(props)
+                this.state={username:"", password:""}
+            }
+
+
+            render() {
+                return (
+                    <div className="main">
+                        <center>
+                        <h1 style={{color: "white"}}>Sign-In  </h1>
+                        
+                        <h3>Username:<input onChange={this.read} type="Name" name="username" placeholder="Username" value={this.state.username}/></h3>
+                        <h3>Password:<input type="password" placeholder="password"/></h3>
+                        
+                        <button onClick={this.add}> signin</button>
+                        <h3>Not an exsisting user? <a href="signup.html" >Signup!</a></h3>
+                        
+                        <br/>
+                        <br/>
+                    </center>
+                
+                    </div>
+                
+                );
+            
+            }
+            read=(ele)=>{
+                
+                console.log(ele.target.name);
+                this.setState({[ele.target.name]:ele.target.value});
+
+            }
+            add=()=>{
+                const res=this.state.username
+                console.log(res);
+                ReactDOM.render(<Message res={res} />, document.querySelector('#root'))
+            }
+        }
+
+            class Message extends React.Component{
+            render(){
+                return(
+                    <div className="main">
+                        <center>
+                    <h1>Welcome {this.props.res}!!</h1>
+                    <button class="button" onClick={this.logout}>logout</button>
+                    </center>
+                    </div>
+                );
+            }
+            logout=()=>{
+                ReactDOM.render(<Userdetails />, document.querySelector('#root'))
+            }
+        }
+ReactDOM.render(<Userdetails />, document.querySelector('#root'))
+
+    </script>
+</html>

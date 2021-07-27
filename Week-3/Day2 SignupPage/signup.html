@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <title>Signup page</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script> 
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script> 
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+
+    </head>
+    <style>
+    .main {
+                margin-left: 40%;
+                margin-top: 16%;
+                margin-right: 40%;
+                display:flexbox;
+                padding: 10px;
+                border: solid 2px;
+                border-color: white;
+                background-color: rgb(62, 178, 250);
+                color: black;
+                text-align: center;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                box-shadow: 0px 0px 3px 3px rgb(62, 178, 250);
+            }
+            input{
+                border: solid 1px;
+                border-color: black;
+                padding: 10px;
+            }
+            h3,h1{
+                color: white;
+            }
+            /* a:hover{
+                color: green;
+            } */
+    </style>
+    <body>
+        <div id="app"></div>
+        <div id="app1"></div>
+        <script type="text/babel">
+        class Userdata extends React.Component {
+
+            constructor(props)
+            {
+                super(props)
+                this.state={val1:"", res:""}
+            }
+
+            
+            render() {
+                return (
+                    <div className="main">
+                    
+                <center>
+                <h1 style={{color: "white"}}> Sign-Up </h1>
+                
+                <h3 >Username: <input onChange={this.readInput} type="Name" name="val1" placeholder="name" value={this.state.val1}/></h3>
+                <h3>Password:<input type="password" placeholder="password"/></h3>
+                <h3>re-enter:<input type="password" placeholder="password"/></h3>
+                <h3>DOB:<input type="date" /></h3>
+                <br/>
+                <button class="button" onClick={this.add}>Signup</button>
+                <br/>
+                </center>
+                <br/>
+                
+                </div>
+                
+                
+                );
+            }
+            readInput=(ele)=>{
+                console.log(ele.target.name);
+                this.setState({[ele.target.name]:ele.target.value});
+
+            }
+            add=()=>{
+                const result=this.state.val1
+                console.log(result);
+                ReactDOM.render(<Message result={result} />, document.querySelector('#app'))
+            }
+        }
+
+        class Message extends React.Component{
+            render(){
+                return(
+                    <div className="main">
+                        <center>
+                    <h1>Successfully signed up!! {this.props.result}</h1>
+                    
+                        <a href="signin.html" ><button class="button" onClick="signin.html">Signin</button></a>
+                    </center>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<Userdata />, document.querySelector('#app'))
+        </script>
+    </body>
+</html>
