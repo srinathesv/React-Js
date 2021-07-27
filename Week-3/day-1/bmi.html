@@ -1,35 +1,105 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <title>BMI Calculator</title>
-  </head>
-  <body>
-    <div id="bmi" />
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+        
+        <style>
+            h1{
+                color: white;
+                text-align: center;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+            }
+            .button{
+                color: purple;
+            }
+            .main{
+                margin-left: 30%;
+                margin-top: 15%;
+                margin-right: 30%;
+                
+                border: solid 2px;
+                border-color: white;
+                background-color: #FF7A00;
+                color: white;
+                text-align: center;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                box-shadow: 0px 0px 10px 3px purple;
+            }
+            .result{
+                display: inline-block;
+                border: solid 2px white;
+                margin-left: 35%;
+                margin-right: 35%;
+                padding: 10px;
+            }
+            
+        </style>
+    </head>
+
+
+    <body>
+        <div class = "main">
+            <h1>BMI Calculator</h1>
+            <div id="root"></div>
+        </div>
+
+        <script type="text/babel">
+		
+            class BMICalculator extends React.Component{	
+                constructor(props){
+                    super(props);
+                    this.state = {weight:"", height:"", bmi:0};
+                }
+                            
+                render(){
+                    return (
+                        <div className = "btn">
+                            <h3>Enter your Weight in kg</h3>
+                            <input onChange={this.read} name="weight" type="number" value={this.state.weight}/>
+                            <br/>
+                            <h3>Enter your Height in mts</h3>
+                            <input onChange={this.read} name="height" type="number" value={this.state.height}/>
+                            <br />
+                            <br />
+                            <button onClick={this.calculate} >Calculate BMI</button>
+                            
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div className="result">Your BMI is : {this.state.bmi}</div>
+                            <br/>
+                            <br/>
+                        </div>
+                        
+                    );
+                }
+                
+                read = (event) =>{
+                    console.log(event.target.name);
+                    this.setState({[event.target.name]:event.target.value});			
+                }
+                
+                calculate = () =>{
+                    const bmi = Number(this.state.weight)/(Number(this.state.height)*(this.state.height));
+                    this.setState({bmi:bmi});
+                    this.setState({weight:""});
+                    this.setState({height:""});
+                }
+
+                
+            }
+            
+            ReactDOM.render(<BMICalculator />, document.querySelector("#root"));
     
-    <script type="text/babel">
+        </script>
+    </body>
 
-      
-
-      class BMI extends React.Component {
-
-        render() {
-          return (
-            <div>
-                <input type="number" name="height" size="10" />
-                <input type="number" name="weight" size="10" />
-                <button> Calculate BMI</button>
-            </div>
-          );    
-        }
-      }
-
-     
-      ReactDOM.render(<BMI />, document.querySelector("#bmi"));
-
-
-    </script>
-  </body>
+    
 </html>

@@ -1,38 +1,122 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <title>Calculator</title>
-  </head>
-  <body>
-    <div id="app" />
-    
-    <script type="text/babel">
 
-      class Calculator extends React.Component {
-        render() {
-          return (
-            <div>
-                <input type="number" name="num1" size="10" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+        
+        <style>
+            h1{
+                color: white;
+                text-align: center;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+            }
+            .button{
+                color: purple;
+            }
+            .main{
+                margin-left: 30%;
+                margin-top: 15%;
+                margin-right: 30%;
                 
-                <input type="number" name="num2" size="10" />
-                <button>Add</button>
-                <button>Subtract</button>
-                <button>Multiply</button>
-                <button>Divide</button>
-            </div>
+                border: solid 2px;
+                border-color: white;
+                background-color: #FF7A00;
+                color: white;
+                text-align: center;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                box-shadow: 0px 0px 10px 3px purple;
+            }
+            .result{
+                border: solid 2px white;
+                margin-left: 40%;
+                margin-right: 40%;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <div class = "main">
+            <h1>Calculator</h1>
+            <div id="root"></div>
+        </div>
+
+        <script type="text/babel">
+		
+            class Addition extends React.Component{	
+                constructor(props){
+                    super(props);
+                    this.state = {val1:"", val2:"", res:0};
+                }
+                            
+                render(){
+                    return (
+                        <div className = "btn">
+                            
+                            <input onChange={this.read} name="val1" type="number" value={this.state.val1}/>
+                            <input onChange={this.read} name="val2" type="number" value={this.state.val2}/>
+                            <br />
+                            <br />
+                            <button onClick={this.add} >Add</button>
+                            <button onClick={this.substract} >Substract</button>
+                            <button onClick={this.multiply} >Multiply</button>
+                            <button onClick={this.division} >Divide</button>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div className="result">Result : {this.state.res}</div>
+                            <br/>
+                            <br/>
+                        </div>
+                        
+                    );
+                }
+                
+                read = (ele) =>{
+                    console.log(ele.target.name);
+                    this.setState({[ele.target.name]:ele.target.value});			
+                }
+                
+                add = () =>{
+                    const res = Number(this.state.val1)+Number(this.state.val2);
+                    this.setState({res:res});
+                    this.setState({val1:""});
+                    this.setState({val2:""});
+                }
+
+                substract = () =>{
+                    const res = Number(this.state.val1)-Number(this.state.val2);
+                    this.setState({res:res});
+                    this.setState({val1:""});
+                    this.setState({val2:""});
+                }
+
+                multiply = () =>{
+                    const res = (Number(this.state.val1)*Number(this.state.val2));
+                    this.setState({res:res});
+                    this.setState({val1:""});
+                    this.setState({val2:""});
+                }
+
+                division = () =>{
+                    const res = (Number(this.state.val1)/Number(this.state.val2));
+                    this.setState({res:res});
+                    this.setState({val1:""});
+                    this.setState({val2:""});
+                }
+                
+            }
             
-          );
-        }
-      }
+            ReactDOM.render(<Addition />, document.querySelector("#root"));
+    
+        </script>
+    </body>
 
-      
-
-      ReactDOM.render(<Calculator />, document.querySelector("#app"));
-     
-
-    </script>
-  </body>
+    
 </html>
