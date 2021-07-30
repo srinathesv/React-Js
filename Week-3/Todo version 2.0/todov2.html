@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <title>To Do list</title>
+  
+</head>
+
+<body class="body">
+  <div id="app">
+  <script type="text/babel">
+
+
+    class App extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          tasks:[],
+          input: "",
+          index:-1,       
+          restore:[]
+        };
+      }
+
+
+      render(){
+        return(
+            <div>
+              <h1>Tasks:</h1> 
+              <table  class="main"id="abc">
+                <thead>
+                    <h2 class="center" class="b" >To Do List</h2>       
+                </thead>
+                  <tbody>
+                      <div class="inbutton button">
+                        <input type="text" onChange={this.UpdateResponse} placeholder="Add tasks here" value={this.state.input}/> 
+                        <input type="text" name="time" onChange={this.setTimer} placeholder="Please enter time"/>
+                        <button  onClick={this.addTask} > Add Task</button> &nbsp;  <button  onClick={this.Update}> Update </button>
+                        <h2 class="c"> Number of tasks: {this.state.tasks.length}</h2>  
+                      </div>
+                        {this.state.tasks.map((task,i) =>
+                        <tr class="d" key={i}>
+                          <td class="a"> {task}</td>
+                          <td>
+                            <button class="button1" onClick={(event)=>{this.deleteTask(event,i)}}> delete</button>
+                          </td>
+                          <td><button class="button1" onClick={(event)=>{this.edit(event,i)}}> Edit </button> </td>
+                        </tr>
+                        )} <br/>      
+                  </tbody> 
+              </table>  
+
+              
+            </div>
+        );
+      }
+
+      componentDidMount() {
+                // this.getData();
+            this.interval = setInterval(() => {
+                let index = 0;
+                while ( index < this.state.tasks.length) {
+                    var t = new Date()
+                    var time = t.getHours() + ":" + t.getMinutes() + ":" + t.getSeconds();
+                    console.log(this.state.tasks[index])
+                    if (time > this.state.time ){
+                        console.log(time)
+                        console.log(this.state.time)
+
+                        this.state.tasks.splice(index,1)
+                        this.setState( {tasks:[...this.state.tasks] })
+                    }  
+                    index++                     
+                }
+            }, 10000);
+        }
+        componentWillUnmount() {
+            clearInterval(this.interval);
+        }
+
+      UpdateResponse=(event)=>{
+        this.setState({input:event.target.value,});
+        // console.log(input)
+      }
+
+
+      addTask=(event)=>{
+        if(this.state.input==""){
+                    return;
+        }
+        this.setState(state=>({
+          tasks:[...state.tasks,state.input],         
+          input:""
+        }));
+      }
+
+
+      deleteTask=(event,i)=>{
+        var n=[...this.state.tasks]
+        this.state.restore=[...this.state.restore,n.splice(i,1)]      
+        this.setState(state=>({tasks:n,}));
+        // console.log(this.state.restore)
+      }
+
+      Update=()=>{
+        var n=[...this.state.tasks]
+        n[this.state.index]=this.state.input
+        this.setState({
+          tasks:n,
+          input:""
+        })
+      }
+
+      edit=(event,i)=>{
+        this.setState({
+          input:this.state.tasks[i],
+          index:i
+        })
+      }
+
+      setTimer = ()=>{
+        const tim=document.getElementsByName("time")[0].value;
+              
+        this.setState({time:tim})
+        // alert(this.state.time)
+      }
+
+      timer=()=>{
+        const index=this.state.index
+        setTimeout(()=>{
+            this.state.tasks.splice(index,1)
+            this.setState({tasks:[...this.state.tasks]})
+            console.log(this.state.tasks)
+        },5000
+
+        );
+      }
+
+    
+
+    }
+  ReactDOM.render(<App />, document.querySelector("#app"));
+
+  </script>
+</body>
+
+</html>
